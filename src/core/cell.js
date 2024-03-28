@@ -1,5 +1,6 @@
 import { expr2xy, xy2expr } from './alphabet';
 import { numberCalc } from './helper';
+import extraData from "./extra_data";
 
 // Converting infix expression to a suffix expression
 // src: AVERAGE(SUM(A1,A2), B1) + 50 + B20
@@ -193,6 +194,11 @@ const evalSuffixExpr = (srcStack, formulaMap, cellRender, cellList) => {
       if (cellList.includes(expr)) {
         return 0;
       }
+      if (i < srcStack.length - 1 && srcStack[i + 1] === "GET") {
+        stack.push(formulaMap["GET"].render(expr));
+        i += 1;
+        continue
+      }
       if ((fc >= 'a' && fc <= 'z') || (fc >= 'A' && fc <= 'Z')) {
         cellList.push(expr);
       }
@@ -208,6 +214,7 @@ const cellRender = (src, formulaMap, getCellText, cellList = []) => {
   if (src[0] === '=') {
     const stack = infixExprToSuffixExpr(src.substring(1));
     if (stack.length <= 0) return src;
+    console.log("cellRender", stack, formulaMap, getCellText, cellList);
     return evalSuffixExpr(
       stack,
       formulaMap,

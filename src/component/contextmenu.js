@@ -16,15 +16,15 @@ const menuItems = [
   { key: 'delete-row', title: tf('contextmenu.deleteRow') },
   { key: 'delete-column', title: tf('contextmenu.deleteColumn') },
   { key: 'delete-cell-text', title: tf('contextmenu.deleteCellText') },
-  { key: 'hide', title: tf('contextmenu.hide') },
-  { key: 'divider' },
-  { key: 'validation', title: tf('contextmenu.validation') },
-  { key: 'divider' },
-  { key: 'cell-printable', title: tf('contextmenu.cellprintable') },
-  { key: 'cell-non-printable', title: tf('contextmenu.cellnonprintable') },
-  { key: 'divider' },
-  { key: 'cell-editable', title: tf('contextmenu.celleditable') },
-  { key: 'cell-non-editable', title: tf('contextmenu.cellnoneditable') },
+  // { key: 'hide', title: tf('contextmenu.hide') },
+  // { key: 'divider' },
+  // { key: 'validation', title: tf('contextmenu.validation') },
+  // { key: 'divider' },
+  // { key: 'cell-printable', title: tf('contextmenu.cellprintable') },
+  // { key: 'cell-non-printable', title: tf('contextmenu.cellnonprintable') },
+  // { key: 'divider' },
+  // { key: 'cell-editable', title: tf('contextmenu.celleditable') },
+  // { key: 'cell-non-editable', title: tf('contextmenu.cellnoneditable') },
 ];
 
 function buildMenuItem(item) {
@@ -61,12 +61,12 @@ export default class ContextMenu {
   // row-col: the whole rows or the whole cols
   // range: select range
   setMode(mode) {
-    const hideEl = this.menuItems[12];
-    if (mode === 'row-col') {
-      hideEl.show();
-    } else {
-      hideEl.hide();
-    }
+    // const hideEl = this.menuItems[12];
+    // if (mode === 'row-col') {
+    //   hideEl.show();
+    // } else {
+    //   hideEl.hide();
+    // }
   }
 
   hide() {

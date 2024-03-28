@@ -19,6 +19,7 @@ import SortFilter from './sort_filter';
 import { xtoast } from './message';
 import { cssPrefix } from '../config';
 import { formulas } from '../core/formula';
+import extraData from "../core/extra_data";
 
 /**
  * @desc throttle fn
@@ -970,6 +971,11 @@ export default class Sheet {
     this.data.setData(data);
     sheetReset.call(this);
     return this;
+  }
+
+  loadExtraData(data){
+    extraData.setAll(data)
+    sheetReset.call(this);
   }
 
   // freeze rows or cols

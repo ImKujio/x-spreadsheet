@@ -163,6 +163,7 @@ export default class Editor {
     this.viewFn = viewFn;
     this.rowHeight = rowHeight;
     this.formulas = formulas;
+    this.extraDate = {};
     this.suggest = new Suggest(formulas, (it) => {
       suggestItemClick.call(this, it);
     });
