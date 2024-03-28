@@ -214,7 +214,7 @@ const cellRender = (src, formulaMap, getCellText, cellList = []) => {
   if (src[0] === '=') {
     const stack = infixExprToSuffixExpr(src.substring(1));
     if (stack.length <= 0) return src;
-    console.log("cellRender", stack, formulaMap, getCellText, cellList);
+    // console.log("cellRender", stack, formulaMap, getCellText, cellList);
     return evalSuffixExpr(
       stack,
       formulaMap,

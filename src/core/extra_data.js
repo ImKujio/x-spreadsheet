@@ -7,7 +7,7 @@ class ExtraData {
     }
 
     get(key) {
-        console.log("ExtraData get key is:" + key, this)
+        // console.log("ExtraData get key is:" + key, this)
         return this[key]
     }
 
