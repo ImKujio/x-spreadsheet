@@ -1,10 +1,11 @@
 /* global window */
-import en from './en';
+// import en from './en';
+import zhCn from "./zh-cn";
 
 // Defines the fallback language as English
-let $languages = ['en'];
+let $languages = ['zhCn'];
 const $messages = {
-  en,
+  zhCn,
 };
 
 function translate(key, messages) {
@@ -38,6 +39,7 @@ function translate(key, messages) {
 }
 
 function t(key) {
+  debugger
   let v = translate(key, $messages);
   if (!v && window && window.x_spreadsheet && window.x_spreadsheet.$messages) {
     v = translate(key, window.x_spreadsheet.$messages);
