@@ -14,6 +14,10 @@ class ExtraData {
     setAll(data) {
         Object.assign(this, data)
     }
+
+    include(key) {
+        return this[key] !== undefined
+    }
 }
 
 const extraData = new ExtraData()
