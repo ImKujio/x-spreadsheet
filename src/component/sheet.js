@@ -967,6 +967,10 @@ export default class Sheet {
     this.table.resetData(data);
   }
 
+  print(){
+    this.print.preview()
+  }
+
   loadData(data) {
     this.data.setData(data);
     sheetReset.call(this);
