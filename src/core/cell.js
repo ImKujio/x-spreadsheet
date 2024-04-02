@@ -86,7 +86,9 @@ const infixExprToSuffixExpr = (src) => {
           fnArgsLen += 1;
         } else if (c === '(' && subStrs.length > 0) {
           // function
-          operatorStack.push(subStrs.join(''));
+          const op = subStrs.join('');
+          if (op === 'GET') fnArgType = 1;
+          operatorStack.push(op);
         } else {
           // priority: */ > +-
           // console.log('xxxx:', operatorStack, c, stack);
@@ -194,9 +196,8 @@ const evalSuffixExpr = (srcStack, formulaMap, cellRender, cellList) => {
       if (cellList.includes(expr)) {
         return 0;
       }
-      if (i < srcStack.length - 1 && srcStack[i + 1] === "GET") {
-        stack.push(formulaMap["GET"].render(expr));
-        i += 1;
+      if (i < srcStack.length - 1 && Array.isArray(srcStack[i + 1]) && srcStack[i + 1][0] === "GET") {
+        stack.push(expr);
         continue
       }
       if ((fc >= 'a' && fc <= 'z') || (fc >= 'A' && fc <= 'Z')) {

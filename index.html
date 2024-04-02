@@ -9,8 +9,10 @@
   <div style="position: fixed; right: 0; top: .3em;">
   <iframe src="https://ghbtns.com/github-btn.html?user=myliang&repo=x-spreadsheet&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
   </div>
+  <button onclick="print()">打印</button>
   <div id="x-spreadsheet-demo"></div>
   <script>
+    let xs
     function load(){
       const rows10 = { len: 1000 };
       for (let i = 0; i < 1000; i += 1) {
@@ -53,7 +55,7 @@
       previewEl.width = 16
       previewEl.height = 16
 
-      var xs = x_spreadsheet('#x-spreadsheet-demo', {
+       xs = x_spreadsheet('#x-spreadsheet-demo', {
         showToolbar: true,
         showGrid: true,
         showBottomBar: true,
@@ -107,7 +109,7 @@
         });
 
       xs.sheet.loadExtraData({"CAO01":123})
-
+// =CONCAT(GET(CAO01),"456")
       xs.on('cell-selected', (cell, ri, ci) => {
           console.log('cell:', cell, ', ri:', ri, ', ci:', ci);
         }).on('cell-edited', (text, ri, ci) => {
@@ -123,6 +125,10 @@
         console.log('cellStyle(8, 8):', xs.cellStyle(8, 8));
       }, 5000);
     }
+    function print(){
+      xs.sheet.startPrint()
+    }
+
   </script>
   <!--script type="text/javascript" src="https://unpkg.com/x-data-spreadsheet@1.0.20/dist/locale/zh-cn.js"></script-->
 </body>

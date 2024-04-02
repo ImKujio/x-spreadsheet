@@ -25,6 +25,7 @@ import Item from './item';
 import { h } from '../element';
 import { cssPrefix } from '../../config';
 import { bind } from '../event';
+import Print from "./print";
 
 function buildDivider() {
   return h('div', `${cssPrefix}-toolbar-divider`);
@@ -111,7 +112,7 @@ export default class Toolbar {
       [
         this.undoEl = new Undo(),
         this.redoEl = new Redo(),
-        // new Print(),
+        new Print(),
         this.paintformatEl = new Paintformat(),
         this.clearformatEl = new Clearformat(),
       ],

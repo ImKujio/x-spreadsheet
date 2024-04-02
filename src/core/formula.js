@@ -20,7 +20,7 @@ const baseFormulas = [
     {
         key: 'GET',
         title: tf('formula.get'),
-        render: (key) => extraData.get(key) ?? '数据异常',
+        render: ([key]) => extraData.get(key??"") ?? '数据异常',
     },
     {
         key: 'SUM',
