@@ -161,7 +161,7 @@ export default class Print {
             for (; ri <= cr.eri; ri += 1) {
                 const rh = data.rows.getHeight(ri);
                 th += rh;
-                if (th < iheight) {
+                if (th * (scale < 1 ? scale : 1) < iheight) {
                     for (let ci = 0; ci <= cr.eci; ci += 1) {
                         renderCell(draw, data, ri, ci, yoffset);
                         mViewRange.eci = ci;

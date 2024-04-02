@@ -97,7 +97,7 @@ const defaultSettings = {
     underline: false,
     color: '#0a0a0a',
     font: {
-      name: 'Arial',
+      name: '微软雅黑',
       size: 10,
       bold: false,
       italic: false,
