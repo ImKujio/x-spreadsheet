@@ -5,9 +5,10 @@ import './_.prototypes';
  * @type {BaseFont[]}
  */
 const baseFonts = [
+  { key: '微软雅黑', title: '微软雅黑' },
+  { key: '思源黑体', title: '思源黑体' },
   { key: 'Arial', title: 'Arial' },
   { key: 'Helvetica', title: 'Helvetica' },
-  { key: 'Source Sans Pro', title: 'Source Sans Pro' },
   { key: 'Comic Sans MS', title: 'Comic Sans MS' },
   { key: 'Courier New', title: 'Courier New' },
   { key: 'Verdana', title: 'Verdana' },
