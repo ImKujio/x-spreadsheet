@@ -57,7 +57,7 @@ const infixExprToSuffixExpr = (src) => {
           } else if (fnArgType === 1 || fnArgType === 3) {
             if (fnArgType === 3) stack.push(fnArgOperator);
             // fn argument => A1,A2,B5
-            stack.push([c1, fnArgsLen]);
+            stack.push([c1, c1 === "GET" ? 1 : fnArgsLen]);
             fnArgsLen = 1;
           } else {
             // console.log('c1:', c1, fnArgType, stack, operatorStack);
@@ -87,7 +87,7 @@ const infixExprToSuffixExpr = (src) => {
         } else if (c === '(' && subStrs.length > 0) {
           // function
           const op = subStrs.join('');
-          if (op === 'GET') fnArgType = 1;
+          if (op === 'GET') {fnArgType = 1}
           operatorStack.push(op);
         } else {
           // priority: */ > +-

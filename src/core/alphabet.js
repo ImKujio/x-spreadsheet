@@ -78,6 +78,7 @@ export function xy2expr(x, y) {
  */
 export function expr2expr(src, xn, yn, condition = () => true) {
   if (xn === 0 && yn === 0) return src;
+  // console.log(src)
   if (extraData.include(src)) return src
   const [x, y] = expr2xy(src);
   if (!condition(x, y)) return src;

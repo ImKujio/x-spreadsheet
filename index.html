@@ -108,8 +108,8 @@
           console.log('>>>', xs.getData());
         });
 
-      xs.sheet.loadExtraData({"CAO01":123})
-// =CONCAT(GET(CAO01),"456")
+      xs.sheet.loadExtraData({"D01AO01":123})
+// =CONCAT(GET(CAO01),GET(CAO01),"456")
       xs.on('cell-selected', (cell, ri, ci) => {
           console.log('cell:', cell, ', ri:', ri, ', ci:', ci);
         }).on('cell-edited', (text, ri, ci) => {
